@@ -10,6 +10,8 @@ public class EnemyProjectile : MonoBehaviour
     public float timeToshoot;
     public float shootCooldown;
 
+    public bool freqShooter;
+    public bool watcher;
     
 
     // Start is called before the first frame update
@@ -21,23 +23,36 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shootCooldown -= Time.deltaTime;
 
-        if(shootCooldown < 0)
+        if (freqShooter)
         {
-            GameObject stone = Instantiate(projectile, transform.position, Quaternion.identity);
+            shootCooldown -= Time.deltaTime;
 
-            if(transform.localScale.x < 0)
+            if (shootCooldown < 0)
             {
-                stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(300f, 0f), ForceMode2D.Force);
+                Shoot();
             }
-            else
-            {
-                stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-300f, 0f), ForceMode2D.Force);
-            }
-
-            shootCooldown = timeToshoot;
+        }
+        if(watcher)
+        {
 
         }
+        
+    }
+
+    public void Shoot()
+    {
+        GameObject stone = Instantiate(projectile, transform.position, Quaternion.identity);
+
+        if (transform.localScale.x < 0)
+        {
+            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(100f, 0f), ForceMode2D.Force);
+        }
+        else
+        {
+            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-100f, 0f), ForceMode2D.Force);
+        }
+
+        shootCooldown = timeToshoot;
     }
 }
