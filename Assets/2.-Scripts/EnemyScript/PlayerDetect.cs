@@ -10,7 +10,6 @@ public class PlayerDetect : MonoBehaviour
         {
                 transform.GetComponentInParent<EnemyProjectile>().watcher = false;
                 transform.GetComponentInParent<EnemyProjectile>().freqShooter = true;
-               
         }
     }
 
