@@ -23,13 +23,26 @@ public class SubWeapons : MonoBehaviour
 
     public void UseSubWeapon()
     {
-        if(Input.GetButtonDown("Fire2") && bulletCost <= Bullets.instance.bulletsAmount)
+        if(Input.GetAxisRaw("Vertical")>0)
         {
-            Bullets.instance.SubItem(-bulletCost);
+            if (Input.GetButtonDown("Fire2") && bulletCost <= Bullets.instance.bulletsAmount)
+            {
+                Bullets.instance.SubItem(-bulletCost);
 
-            GameObject subItem = Instantiate(bullet, transform.position, Quaternion.identity);
-            subItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f, 0f), ForceMode2D.Force);
-            
+                GameObject subItem = Instantiate(bullet, transform.position, Quaternion.identity);
+
+
+                if (transform.localScale.x < 0)
+                {
+                    subItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500f, 0f), ForceMode2D.Force);
+                }
+                else
+                {
+                    subItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f, 0f), ForceMode2D.Force);
+                }
+
+            }
         }
+        
     }
 }
