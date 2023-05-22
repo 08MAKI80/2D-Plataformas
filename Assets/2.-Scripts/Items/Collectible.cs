@@ -5,13 +5,13 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
 
-    public float bulletsToGive;
+    public int bulletsToGive;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Subitems.instance.SubItem(bulletsToGive);
+            Bullets.instance.SubItem(bulletsToGive);
             Destroy(gameObject);
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Potions : MonoBehaviour
 {
 
-    public float healthToGive;
+    public int healthToGive;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

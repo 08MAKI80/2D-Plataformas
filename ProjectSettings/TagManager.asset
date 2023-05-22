@@ -7,6 +7,7 @@ TagManager:
   - Arma
   - Enemy
   - Item
+  - Weapon
   layers:
   - Default
   - TransparentFX

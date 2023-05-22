@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BankAccount : MonoBehaviour
 {
-    public float bank;
+    public int bank;
     public Text bankText;
 
     public static BankAccount instance;
@@ -22,7 +22,7 @@ public class BankAccount : MonoBehaviour
         bankText.text = bank.ToString();
     }
 
-    public void Money(float cashCollected) 
+    public void Money(int cashCollected) 
     {
         bank += cashCollected;
         bankText.text = bank.ToString();
