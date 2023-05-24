@@ -6,10 +6,11 @@ public class EnemyProjectile : MonoBehaviour
 {
 
     public GameObject projectile;
-
+    public GameObject projectileToDestroy;
     public float timeToshoot;
     public float shootCooldown;
-
+    public float timeDestroyProjectile;
+    public float destroyCooldown;
     public bool freqShooter;
     public bool watcher;
     
@@ -17,7 +18,7 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shootCooldown = timeToshoot;
+        destroyCooldown = timeDestroyProjectile;
     }
 
     // Update is called once per frame
@@ -30,29 +31,45 @@ public class EnemyProjectile : MonoBehaviour
 
             if (shootCooldown < 0)
             {
-                Shoot();
+                projectileToDestroy=Shoot();
+                
+                if (destroyCooldown < 0)
+                {
+                    Destroy(projectileToDestroy);
+                    destroyCooldown = timeDestroyProjectile;
+                }
             }
         }
         if(watcher)
         {
-
+            shootCooldown -= Time.deltaTime;
+            destroyCooldown -= Time.deltaTime;
+            if (destroyCooldown < 0)
+            {
+                Destroy(projectileToDestroy);
+                destroyCooldown = timeDestroyProjectile;
+            }
+            
         }
         
+
     }
 
-    public void Shoot()
+    public GameObject Shoot()
     {
         GameObject stone = Instantiate(projectile, transform.position, Quaternion.identity);
 
         if (transform.localScale.x < 0)
         {
-            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(100f, 0f), ForceMode2D.Force);
+            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f, 0f), ForceMode2D.Force);
         }
         else
         {
-            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-100f, 0f), ForceMode2D.Force);
+            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200f, 0f), ForceMode2D.Force);
         }
 
         shootCooldown = timeToshoot;
+
+        return stone;
     }
 }
