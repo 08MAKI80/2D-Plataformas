@@ -6,13 +6,19 @@ public class SubWeapons : MonoBehaviour
 {
 
     public int bulletCost;
-
+    public int MagicCost;
     public GameObject bullet;
+    public GameObject Spell;
+    public float timeToShoot;
+    public float shootCooldown;
+    public float timeToCastSpell;
+    public float spellCooldown;
+    public GameObject projectileToDestroy;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,7 +29,8 @@ public class SubWeapons : MonoBehaviour
 
     public void UseSubWeapon()
     {
-        if(Input.GetAxisRaw("Vertical")>0)
+        //Disparar Balas
+        if (Input.GetAxisRaw("Vertical") > 0)
         {
             if (Input.GetButtonDown("Fire2") && bulletCost <= Bullets.instance.bulletsAmount)
             {
@@ -43,6 +50,22 @@ public class SubWeapons : MonoBehaviour
 
             }
         }
-        
+
+        //casteo y disparo de hechizo
+        if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            if (Input.GetButtonDown("Fire2") && MagicCost <= PlayerHealt.instance.mana)
+            {
+
+
+                PlayerHealt.instance.mana -= MagicCost;
+
+
+
+
+            }
+
+
+        }
     }
 }

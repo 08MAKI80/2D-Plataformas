@@ -61,11 +61,11 @@ public class EnemyProjectile : MonoBehaviour
 
         if (transform.localScale.x < 0)
         {
-            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f, 0f), ForceMode2D.Force);
+            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(125f, 0f), ForceMode2D.Force);
         }
         else
         {
-            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200f, 0f), ForceMode2D.Force);
+            stone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-125f, 0f), ForceMode2D.Force);
         }
 
         shootCooldown = timeToshoot;

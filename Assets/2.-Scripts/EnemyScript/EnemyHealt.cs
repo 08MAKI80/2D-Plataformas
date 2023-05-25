@@ -21,26 +21,41 @@ public class EnemyHealt : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.CompareTag("Arma") && !isDamaged)
         {
-            enemy.healtpoint -= 2f;
+            enemy.healtpoint -= PlayerHealt.instance.swordDamage;
+            EnemyDamaged(collision);
+        }
+        else if (collision.CompareTag("Bullet") && !isDamaged)
+        {
+            enemy.healtpoint -= PlayerHealt.instance.bulletDamage;
+            EnemyDamaged(collision);
+        }
+        else if (collision.CompareTag("Spell") && !isDamaged)
+        {
+            enemy.healtpoint -= PlayerHealt.instance.spellDamage;
+            EnemyDamaged(collision);
+        }
+    }
 
-            if(collision.transform.position.x < transform.position.x)
-            {
-                rb.AddForce(new Vector2(enemy.knocbackForceX, enemy.knocbackForceY), ForceMode2D.Force);
-            }
-            else
-            {
-                rb.AddForce(new Vector2(- enemy.knocbackForceX, enemy.knocbackForceY), ForceMode2D.Force);
-            }
-            
-            StartCoroutine(Damager());
+    public void EnemyDamaged(Collider2D collision)
+    {
+        if (collision.transform.position.x < transform.position.x)
+        {
+            rb.AddForce(new Vector2(enemy.knocbackForceX, enemy.knocbackForceY), ForceMode2D.Force);
+        }
+        else
+        {
+            rb.AddForce(new Vector2(-enemy.knocbackForceX, enemy.knocbackForceY), ForceMode2D.Force);
+        }
 
-            if(enemy.healtpoint <= 0)
-            {
-                Instantiate(deatEffect, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-            }
+        StartCoroutine(Damager());
+
+        if (enemy.healtpoint <= 0)
+        {
+            Instantiate(deatEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
