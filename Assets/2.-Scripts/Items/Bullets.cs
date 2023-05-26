@@ -8,6 +8,7 @@ public class Bullets : MonoBehaviour
 
     public int bulletsAmount;
     public Text bulletsText;
+    public int maxBullets;
 
     public static Bullets instance;
 
@@ -23,7 +24,14 @@ public class Bullets : MonoBehaviour
     {
         bulletsText.text = bulletsAmount.ToString();
     }
-
+    private void Update()
+    {
+        if (bulletsAmount > maxBullets)
+        {
+            bulletsAmount = maxBullets;
+        }
+        bulletsText.text = bulletsAmount.ToString();
+    }
     public void SubItem(int subItemAmount)
     {
         bulletsAmount += subItemAmount;
