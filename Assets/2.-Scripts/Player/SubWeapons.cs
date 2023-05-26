@@ -6,14 +6,10 @@ public class SubWeapons : MonoBehaviour
 {
 
     public int bulletCost;
-    public int MagicCost;
+    public float MagicCost;
     public GameObject bullet;
-    public GameObject Spell;
-    public float timeToShoot;
-    public float shootCooldown;
-    public float timeToCastSpell;
-    public float spellCooldown;
-    public GameObject projectileToDestroy;
+    public GameObject spell;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +56,18 @@ public class SubWeapons : MonoBehaviour
 
                 PlayerHealt.instance.mana -= MagicCost;
 
+                GameObject subItem = Instantiate(spell, transform.position, Quaternion.identity);
 
+
+                if (transform.localScale.x < 0)
+                {
+                    subItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500f, 0f), ForceMode2D.Force);
+                    subItem.transform.localScale = new Vector2(-1, -1);
+                }
+                else
+                {
+                    subItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f, 0f), ForceMode2D.Force);
+                }
 
 
             }

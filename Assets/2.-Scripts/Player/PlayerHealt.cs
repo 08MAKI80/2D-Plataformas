@@ -54,6 +54,10 @@ public class PlayerHealt : MonoBehaviour
         {
             health = maxHealth;
         }
+        else if(mana> maxMana)
+        {
+            mana = maxMana;
+        }
         
     }
     private void OnTriggerEnter2D(Collider2D collision)

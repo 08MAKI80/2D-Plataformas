@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Potions : MonoBehaviour
+public class ManaPotions : MonoBehaviour
 {
-
-    public int healthToGive;
+    public float manaToGive;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerHealt>().health += healthToGive;
+            collision.GetComponent<PlayerHealt>().mana += manaToGive;
             Destroy(gameObject);
         }
     }
