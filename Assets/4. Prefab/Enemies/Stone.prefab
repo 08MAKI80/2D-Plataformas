@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6332169237346099174}
   m_Layer: 11
   m_Name: Stone
-  m_TagString: Enemy
+  m_TagString: EnemiesProjectiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,3 +167,4 @@ MonoBehaviour:
   knocbackForceX: 0
   knocbackForceY: 0
   damageToGive: 5
+  ExpToGive: 0

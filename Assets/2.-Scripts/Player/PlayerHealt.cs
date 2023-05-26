@@ -62,7 +62,7 @@ public class PlayerHealt : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") && !isInmune)
+        if ((collision.CompareTag("Enemy") || collision.CompareTag("EnemiesProjectiles")) && !isInmune)
         {
             health -= collision.GetComponent<Enemy>().damageToGive;
             StartCoroutine(Inmunity());
