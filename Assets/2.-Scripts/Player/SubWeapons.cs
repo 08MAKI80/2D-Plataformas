@@ -62,7 +62,6 @@ public class SubWeapons : MonoBehaviour
                 if (transform.localScale.x < 0)
                 {
                     subItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500f, 0f), ForceMode2D.Force);
-                    subItem.transform.localScale = new Vector2(-1, -1);
                 }
                 else
                 {

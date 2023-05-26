@@ -10,4 +10,5 @@ public class Enemy : MonoBehaviour
     public float knocbackForceX;
     public float knocbackForceY;
     public float damageToGive;
+    public float ExpToGive;
 }

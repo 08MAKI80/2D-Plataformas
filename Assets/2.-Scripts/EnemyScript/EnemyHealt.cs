@@ -55,6 +55,7 @@ public class EnemyHealt : MonoBehaviour
         if (enemy.healtpoint <= 0)
         {
             Instantiate(deatEffect, transform.position, Quaternion.identity);
+            ExperienceScript.instance.expModifier(GetComponent<Enemy>().ExpToGive);
             Destroy(gameObject);
         }
     }
