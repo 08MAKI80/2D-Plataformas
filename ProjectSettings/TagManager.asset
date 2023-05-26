@@ -11,6 +11,8 @@ TagManager:
   - EnemiesProjectiles
   - Spell
   - Bullet
+  - Pared
+  - Suelo
   layers:
   - Default
   - TransparentFX

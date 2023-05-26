@@ -6,11 +6,8 @@ public class EnemyProjectile : MonoBehaviour
 {
 
     public GameObject projectile;
-    public GameObject projectileToDestroy;
     public float timeToshoot;
     public float shootCooldown;
-    public float timeDestroyProjectile;
-    public float destroyCooldown;
     public bool freqShooter;
     public bool watcher;
     
@@ -18,7 +15,6 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        destroyCooldown = timeDestroyProjectile;
     }
 
     // Update is called once per frame
@@ -31,31 +27,18 @@ public class EnemyProjectile : MonoBehaviour
 
             if (shootCooldown < 0)
             {
-                projectileToDestroy=Shoot();
-                
-                if (destroyCooldown < 0)
-                {
-                    Destroy(projectileToDestroy);
-                    destroyCooldown = timeDestroyProjectile;
-                }
+               Shoot();
             }
         }
         if(watcher)
         {
-            shootCooldown -= Time.deltaTime;
-            destroyCooldown -= Time.deltaTime;
-            if (destroyCooldown < 0)
-            {
-                Destroy(projectileToDestroy);
-                destroyCooldown = timeDestroyProjectile;
-            }
-            
+            shootCooldown -= Time.deltaTime;  
         }
         
 
     }
 
-    public GameObject Shoot()
+    public void Shoot()
     {
         GameObject stone = Instantiate(projectile, transform.position, Quaternion.identity);
 
@@ -69,7 +52,5 @@ public class EnemyProjectile : MonoBehaviour
         }
 
         shootCooldown = timeToshoot;
-
-        return stone;
     }
 }

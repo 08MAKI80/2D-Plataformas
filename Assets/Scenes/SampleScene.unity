@@ -2198,7 +2198,7 @@ GameObject:
   - component: {fileID: 533971833}
   m_Layer: 7
   m_Name: Suelo
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
