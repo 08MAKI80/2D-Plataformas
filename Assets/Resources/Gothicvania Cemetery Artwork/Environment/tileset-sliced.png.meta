@@ -2411,7 +2411,7 @@ TextureImporter:
         width: 36
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2419,6 +2419,48 @@ TextureImporter:
       bones: []
       spriteID: 9f84014b34f2913478494ff5adf1d564
       internalID: 1950534351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trozoColumna
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 61
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36ee399daa8f85479ec6b50e0e5ab17
+      internalID: 1519155254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopColumna
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 96
+        width: 43
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a1fffd0b11741438a5bb71143b49be
+      internalID: -1385358532
       vertices: []
       indices: 
       edges: []
@@ -2438,6 +2480,7 @@ TextureImporter:
       RocasSubsuelo: 2066099008
       RocasSubsuelo1: 21300132
       Suelo: -1068316421
+      TopColumna: -1385358532
       suelo1: 528672206
       tileset-sliced_0: 21300000
       tileset-sliced_1: 21300002
@@ -2531,6 +2574,7 @@ TextureImporter:
       tileset-sliced_90: 21300180
       tileset-sliced_91: 21300182
       tileset-sliced_92: 21300184
+      trozoColumna: 1519155254
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

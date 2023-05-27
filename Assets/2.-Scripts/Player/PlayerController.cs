@@ -13,6 +13,17 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     Animator anim;
 
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+
+        }
+    }
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
