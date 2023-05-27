@@ -11,6 +11,7 @@ public class HealthPotions : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.instance.PlayAudio(AudioManager.instance.item);
             collision.GetComponent<PlayerHealt>().health += healthToGive;
             Destroy(gameObject);
         }

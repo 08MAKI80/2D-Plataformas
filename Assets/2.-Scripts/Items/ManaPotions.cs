@@ -11,6 +11,7 @@ public class ManaPotions : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerHealt>().mana += manaToGive;
+            AudioManager.instance.PlayAudio(AudioManager.instance.item);
             Destroy(gameObject);
         }
     }

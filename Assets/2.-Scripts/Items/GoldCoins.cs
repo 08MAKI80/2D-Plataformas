@@ -10,11 +10,9 @@ public class GoldCoins : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-
-            Destroy(gameObject);
             BankAccount.instance.Money(cashTogive);
-
-            
+            AudioManager.instance.PlayAudio(AudioManager.instance.coin);
+            Destroy(gameObject); 
         }
     }
 }

@@ -31,7 +31,7 @@ public class SubWeapons : MonoBehaviour
             if (Input.GetButtonDown("Fire2") && bulletCost <= Bullets.instance.bulletsAmount)
             {
                 Bullets.instance.SubItem(-bulletCost);
-
+                AudioManager.instance.PlayAudio(AudioManager.instance.shot);
                 GameObject subItem = Instantiate(bullet, transform.position, Quaternion.identity);
 
 
@@ -55,7 +55,7 @@ public class SubWeapons : MonoBehaviour
 
 
                 PlayerHealt.instance.mana -= MagicCost;
-
+                AudioManager.instance.PlayAudio(AudioManager.instance.fireBall);
                 GameObject subItem = Instantiate(spell, transform.position, Quaternion.identity);
 
 

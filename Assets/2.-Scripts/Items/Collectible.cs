@@ -11,6 +11,7 @@ public class Collectible : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.instance.PlayAudio(AudioManager.instance.item);
             Bullets.instance.SubItem(bulletsToGive);
             Destroy(gameObject);
         }

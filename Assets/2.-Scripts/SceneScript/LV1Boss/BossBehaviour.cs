@@ -48,6 +48,7 @@ public class BossBehaviour : MonoBehaviour
 
     public void ShootPlayer()
     {
+            AudioManager.instance.PlayAudio(AudioManager.instance.fireBallBoss);
             GameObject spell = Instantiate(flame, transform.position, Quaternion.identity);
     }
 

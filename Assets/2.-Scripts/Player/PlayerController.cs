@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float groundcheckRadius;
     public LayerMask whatIsGround;
     Animator anim;
+    public bool moving;
 
     public static PlayerController instance;
 
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movimiento();
+       Movimiento();
         Salto();
     }
 
@@ -63,14 +64,23 @@ public class PlayerController : MonoBehaviour
 
         rigidbody.velocity = new Vector2(velX * speed, velY);
 
-        if(rigidbody.velocity.x != 0) anim.SetBool("Walk", true);
-        else anim.SetBool("Walk", false);
+        if (rigidbody.velocity.x != 0)
+        {   
+            anim.SetBool("Walk", true);
+            
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+            
+        }
     }
 
     public void Salto()
     {
         if (Input.GetButton("Jump") && isGrounded)
         {
+            AudioManager.instance.PlayAudio(AudioManager.instance.jump);
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, FuerzaSalto);
         }
     }
@@ -93,7 +103,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             anim.SetBool("Attack", true);
-        }else
+            AudioManager.instance.PlayAudio(AudioManager.instance.swordSlash);
+        }
+        else
         {
             anim.SetBool("Attack", false);
         }

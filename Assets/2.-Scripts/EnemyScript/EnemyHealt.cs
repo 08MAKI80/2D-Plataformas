@@ -10,6 +10,7 @@ public class EnemyHealt : MonoBehaviour
     SpriteRenderer sprite;
     Blink material;
     Rigidbody2D rb;
+    public AudioSource enemyDeath, enemyHit;
 
     private void Start()
     {
@@ -43,10 +44,12 @@ public class EnemyHealt : MonoBehaviour
     {
         if (collision.transform.position.x < transform.position.x)
         {
+            AudioManager.instance.PlayAudio(enemyHit);
             rb.AddForce(new Vector2(enemy.knocbackForceX, enemy.knocbackForceY), ForceMode2D.Force);
         }
         else
         {
+            AudioManager.instance.PlayAudio(enemyHit);
             rb.AddForce(new Vector2(-enemy.knocbackForceX, enemy.knocbackForceY), ForceMode2D.Force);
         }
 
@@ -54,6 +57,7 @@ public class EnemyHealt : MonoBehaviour
 
         if (enemy.healtpoint <= 0)
         {
+            AudioManager.instance.PlayAudio(enemyDeath);
             Instantiate(deatEffect, transform.position, Quaternion.identity);
             ExperienceScript.instance.expModifier(GetComponent<Enemy>().ExpToGive);
             Destroy(gameObject);

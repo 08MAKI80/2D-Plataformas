@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 75859f72ea805754697ab20465a7fe6c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - music: {fileID: 24100000, guid: d2bf617e8f428724fa43dbb21fa20c34, type: 2}
+  - effects: {fileID: 24100000, guid: a96ae6bb4eee63946825b2c0fcc9ce8d, type: 2}
+  - bossDeath: {instanceID: 0}
+  - bossEncounter: {instanceID: 0}
+  - bossHit: {instanceID: 0}
+  - coin: {instanceID: 0}
+  - enemyDeath: {instanceID: 0}
+  - fireBallBoss: {instanceID: 0}
+  - fireBall: {instanceID: 0}
+  - item: {instanceID: 0}
+  - jump: {instanceID: 0}
+  - playerHit: {instanceID: 0}
+  - shot: {instanceID: 0}
+  - skeletonHit: {instanceID: 0}
+  - swordSlash: {instanceID: 0}
+  - walk: {instanceID: 0}
+  - bGMusic: {instanceID: 0}
+  - bossBGMusic: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
