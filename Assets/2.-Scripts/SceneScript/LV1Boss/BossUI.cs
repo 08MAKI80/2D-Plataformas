@@ -33,9 +33,9 @@ public class BossUI : MonoBehaviour
         bossPanel.SetActive(true);
         walls.SetActive(true);
     }
-    // Update is called once per frame
-    void Update()
+    public void BossDesactivator()
     {
-        
+        bossPanel.SetActive(false);
+        walls.SetActive(false);
     }
 }
