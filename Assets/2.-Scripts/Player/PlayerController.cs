@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
     public void Ataque()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !PauseMenu.instance.isPaused)
         {
             anim.SetBool("Attack", true);
             AudioManager.instance.PlayAudio(AudioManager.instance.swordSlash);

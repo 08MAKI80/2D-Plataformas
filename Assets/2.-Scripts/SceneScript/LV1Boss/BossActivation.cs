@@ -18,6 +18,8 @@ public class BossActivation : MonoBehaviour
         {
             BossUI.instance.BossActivator();
             AudioManager.instance.PlayAudio(AudioManager.instance.bossEncounter);
+            AudioManager.instance.StopAudio(AudioManager.instance.bGMusic);
+            AudioManager.instance.PlayAudio(AudioManager.instance.bossBGMusic);
             StartCoroutine(WaitForBoss());
         }
     }
