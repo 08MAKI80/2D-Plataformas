@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    [Range(-80,10)]
+    [Range(-50,0)]
     public float musicVol, effectsVol;
     public Slider musicSlider, effectsSlider;
 
@@ -34,10 +34,10 @@ public class AudioManager : MonoBehaviour
         musicSlider.value = musicVol;
         effectsSlider.value = effectsVol;
 
-        musicSlider.minValue = -80;
-        musicSlider.maxValue = 10;
-        effectsSlider.minValue = -80;
-        effectsSlider.maxValue = 10;
+        musicSlider.minValue = -70;
+        musicSlider.maxValue = 0;
+        effectsSlider.minValue = -70;
+        effectsSlider.maxValue = 0;
     }
 
     // Update is called once per frame
