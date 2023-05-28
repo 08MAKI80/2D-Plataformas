@@ -24,11 +24,15 @@ public class PlayerHealt : MonoBehaviour
     public float knockbackForceY;
     Rigidbody2D rb;
 
+    public GameObject gameOver;
+
     public static PlayerHealt instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.gameOverSound.Stop();
+        gameOver.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         material = GetComponent<Blink>();
         sprite = GetComponent<SpriteRenderer>();
@@ -80,6 +84,14 @@ public class PlayerHealt : MonoBehaviour
             if(health <= 0)
             {
                 // aparecer pantalla de game over
+                Time.timeScale = 0;
+                gameOver.SetActive(true);
+                AudioManager.instance.bossBGMusic.Stop();
+                AudioManager.instance.bGMusic.Stop();
+                AudioManager.instance.swordSlash.Stop();
+                AudioManager.instance.fireBall.Stop();
+                AudioManager.instance.shot.Stop();
+                AudioManager.instance.PlayAudio(AudioManager.instance.gameOverSound);
                 print("Player Dead");
             }
         }
