@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer musicMixer, effectsMixer;
 
     public AudioSource bossDeath, bossEncounter, bossHit, coin, enemyDeath, fireBallBoss, fireBall,
-        item, jump, playerHit, shot, skeletonHit, swordSlash, walk, bGMusic, bossBGMusic,gameOverSound;
+        item, jump, playerHit, shot, skeletonHit, swordSlash, walk, bGMusic, bossBGMusic,gameOverSound, LvlUp;
 
     public static AudioManager instance;
 

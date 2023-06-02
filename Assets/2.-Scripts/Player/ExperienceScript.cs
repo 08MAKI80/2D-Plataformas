@@ -43,6 +43,7 @@ public class ExperienceScript : MonoBehaviour
         expImage.fillAmount = currentExp / expToNextLV;
         if (currentExp >= expToNextLV)
         {
+            AudioManager.instance.PlayAudio(AudioManager.instance.LvlUp);
             expToNextLV = expToNextLV * 2;
             currentExp = 0;
             PlayerHealt.instance.maxHealth += 50f;
