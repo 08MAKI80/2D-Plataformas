@@ -95,6 +95,19 @@ public class PlayerHealt : MonoBehaviour
                 print("Player Dead");
             }
         }
+        if (collision.CompareTag("pozo"))
+        {
+           // aparecer pantalla de game over
+           Time.timeScale = 0;
+           gameOver.SetActive(true);
+           AudioManager.instance.bossBGMusic.Stop();
+           AudioManager.instance.bGMusic.Stop();
+           AudioManager.instance.swordSlash.Stop();
+           AudioManager.instance.fireBall.Stop();
+           AudioManager.instance.shot.Stop();
+           AudioManager.instance.PlayAudio(AudioManager.instance.gameOverSound);
+        }
+
     }
 
     IEnumerator Inmunity()

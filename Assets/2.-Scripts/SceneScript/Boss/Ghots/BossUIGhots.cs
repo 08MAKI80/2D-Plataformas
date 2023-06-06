@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class BossUI : MonoBehaviour
+public class BossUIGhots : MonoBehaviour
 {
 
     public GameObject bossPanel;
     public GameObject walls;
 
-    public static BossUI instance;
+    public static BossUIGhots instance;
 
 
     private void Awake()

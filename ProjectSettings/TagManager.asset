@@ -13,6 +13,8 @@ TagManager:
   - Bullet
   - Pared
   - Suelo
+  - Skeleton
+  - pozo
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - Foreground
   - Enemigos
   - Item
-  - 
-  - 
+  - Skeleton
+  - pozo
   - 
   - 
   - 

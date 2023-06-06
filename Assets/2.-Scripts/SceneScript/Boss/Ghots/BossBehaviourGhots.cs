@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossBehaviour : MonoBehaviour
+public class BossBehaviourGhots : MonoBehaviour
 {
     public Transform[] transforms;
     public GameObject flame;
@@ -67,7 +67,7 @@ public class BossBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        BossUI.instance.BossDesactivator();
+        BossUIGhots.instance.BossDesactivator();
     }
 
     public void BossScale()

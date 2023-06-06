@@ -22,7 +22,7 @@ public class Bullets : MonoBehaviour
 
     private void Start()
     {
-        bulletsText.text = bulletsAmount.ToString();
+        bulletsText.text = (bulletsAmount.ToString() + "/ " + maxBullets );
     }
     private void Update()
     {

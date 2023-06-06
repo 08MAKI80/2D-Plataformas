@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossActivation : MonoBehaviour
+public class BossActivationGhots : MonoBehaviour
 {
 
     public GameObject boss;
@@ -14,14 +14,13 @@ public class BossActivation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            BossUI.instance.BossActivator();
+
+            BossUIGhots.instance.BossActivator();  
             AudioManager.instance.PlayAudio(AudioManager.instance.bossEncounter);
             AudioManager.instance.StopAudio(AudioManager.instance.bGMusic);
             AudioManager.instance.PlayAudio(AudioManager.instance.bossBGMusic);
             StartCoroutine(WaitForBoss());
-        }
+        
     }
 
     IEnumerator WaitForBoss()
