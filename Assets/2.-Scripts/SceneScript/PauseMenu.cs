@@ -34,12 +34,12 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)&& !isPaused)
+        if (Input.GetButtonDown("Cancel") && !isPaused)
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
             isPaused = true;
-        }else if(Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        }else if(Input.GetButtonDown("Cancel") && isPaused)
         {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);

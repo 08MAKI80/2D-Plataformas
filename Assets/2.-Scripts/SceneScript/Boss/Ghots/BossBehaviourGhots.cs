@@ -18,7 +18,6 @@ public class BossBehaviourGhots : MonoBehaviour
     private void Start()
     { 
         transform.position = transforms[1].position;
-        countdown = timeToShoot;
         countdownToTP = timeToTP;
         bossHealth = GetComponent<Enemy>().maxhealth;
     }

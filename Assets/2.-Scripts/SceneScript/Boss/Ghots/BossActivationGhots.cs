@@ -20,9 +20,7 @@ public class BossActivationGhots : MonoBehaviour
             AudioManager.instance.StopAudio(AudioManager.instance.bGMusic);
             AudioManager.instance.PlayAudio(AudioManager.instance.bossBGMusic);
             StartCoroutine(WaitForBoss());
-        
     }
-
     IEnumerator WaitForBoss()
     {
         var currentSpeed = PlayerController.instance.speed;

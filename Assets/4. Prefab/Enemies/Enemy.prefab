@@ -350,7 +350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyName: Skeleton
-  healtpoint: 10
+  maxhealth: 0
+  healtpoint: 75
   speed: 25
   knocbackForceX: 100
   knocbackForceY: 100
@@ -370,6 +371,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDamaged: 0
   deatEffect: {fileID: 278092467222845656, guid: a9aa0bdaf05024347adb082823ae22bb, type: 3}
+  enemyDeath: {fileID: 0}
+  enemyHit: {fileID: 0}
 --- !u!95 &4449134743554809500
 Animator:
   serializedVersion: 5

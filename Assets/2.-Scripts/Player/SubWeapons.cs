@@ -26,10 +26,8 @@ public class SubWeapons : MonoBehaviour
     public void UseSubWeapon()
     {
         //Disparar Balas
-        if (Input.GetAxisRaw("Vertical") > 0)
+        if (((Input.GetButtonDown("Fire2") && Input.GetAxisRaw("Vertical") > 0) || Input.GetButtonDown("Fire3Gamepad")) && bulletCost <= Bullets.instance.bulletsAmount && !PauseMenu.instance.isPaused)
         {
-            if (Input.GetButtonDown("Fire2") && bulletCost <= Bullets.instance.bulletsAmount && !PauseMenu.instance.isPaused)
-            {
                 Bullets.instance.SubItem(-bulletCost);
                 AudioManager.instance.PlayAudio(AudioManager.instance.shot);
                 GameObject subItem = Instantiate(bullet, transform.position, Quaternion.identity);
@@ -45,12 +43,10 @@ public class SubWeapons : MonoBehaviour
                 }
 
             }
-        }
+        
 
         //casteo y disparo de hechizo
-        if (Input.GetAxisRaw("Vertical") < 0)
-        {
-            if (Input.GetButtonDown("Fire2") && MagicCost <= PlayerHealt.instance.mana && !PauseMenu.instance.isPaused)
+            if (((Input.GetButtonDown("Fire2") && Input.GetAxisRaw("Vertical") < 0) || Input.GetButtonDown("Fire2Gamepad")) && MagicCost <= PlayerHealt.instance.mana && !PauseMenu.instance.isPaused)
             {
 
 
@@ -70,8 +66,5 @@ public class SubWeapons : MonoBehaviour
 
 
             }
-
-
-        }
     }
 }
