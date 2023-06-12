@@ -67,6 +67,8 @@ public class BossBehaviourGhots : MonoBehaviour
     private void OnDestroy()
     {
         BossUIGhots.instance.BossDesactivator();
+        bossDerrotado();
+        PlayerHealt.instance.final.SetActive(true);
     }
 
     public void BossScale()
@@ -89,5 +91,15 @@ public class BossBehaviourGhots : MonoBehaviour
         yield return new WaitForSeconds(3);
         PlayerController.instance.enabled = true;
         PlayerController.instance.GetComponent<Rigidbody2D>().velocity = originalSpeed;
+
+    }
+
+    public void bossDerrotado()
+    {
+        PlayerController.instance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, PlayerController.instance.GetComponent<Rigidbody2D>().velocity.y);
+        PlayerController.instance.enabled = false;
+        AudioManager.instance.AudioFinal();
+        AudioManager.instance.PlayAudio(AudioManager.instance.OST);
+
     }
 }

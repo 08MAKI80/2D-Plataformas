@@ -25,6 +25,7 @@ public class PlayerHealt : MonoBehaviour
     Rigidbody2D rb;
 
     public GameObject gameOver;
+    public GameObject final;
 
     public static PlayerHealt instance;
 
@@ -33,6 +34,7 @@ public class PlayerHealt : MonoBehaviour
     {
         AudioManager.instance.gameOverSound.Stop();
         gameOver.SetActive(false);
+        final.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         material = GetComponent<Blink>();
         sprite = GetComponent<SpriteRenderer>();

@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixer musicMixer, effectsMixer;
 
-    public AudioSource bossDeath, bossEncounter, bossHit, coin, enemyDeath, fireBallBoss, fireBall,
+    public AudioSource bossDeath, bossEncounter, bossHit, coin, enemyDeath, fireBallBoss, fireBall, OST,
         item, jump, playerHit, shot, skeletonHit, swordSlash, walk, bGMusic, bossBGMusic,gameOverSound, LvlUp;
 
     public static AudioManager instance;
@@ -56,6 +56,11 @@ public class AudioManager : MonoBehaviour
     public void StopAudio(AudioSource audio)
     {
         audio.Stop();
+    }
+    public void AudioFinal()
+    {
+        bossBGMusic.Stop();
+        bGMusic.Stop();
     }
 
     public void MusicVolume()
