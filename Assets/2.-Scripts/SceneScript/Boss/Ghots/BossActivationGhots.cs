@@ -14,12 +14,14 @@ public class BossActivationGhots : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-            BossUIGhots.instance.BossActivator();  
+        if (collision.CompareTag("Player")) {
+            BossUIGhots.instance.BossActivator();
             AudioManager.instance.PlayAudio(AudioManager.instance.bossEncounter);
             AudioManager.instance.StopAudio(AudioManager.instance.bGMusic);
             AudioManager.instance.PlayAudio(AudioManager.instance.bossBGMusic);
             StartCoroutine(WaitForBoss());
+        }
+            
     }
     IEnumerator WaitForBoss()
     {
